@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(void)
+{
+	printf_s("本プログラムは,数学理論上に展開した数式型暗号を提供するプログラムです.\n");
+	printf_s("プログラミングの都合により理論とは多少異なる方式になります.\n");
+	printf_s("暗号化プログラムです.\n");
+	printf_s("平文を入力してください.\n");
+	char buf[20];
+	for (int i = 0; i < 20; i++)
+	{
+		buf[i] = NULL;
+	}
+	scanf_s("%9s", buf, 9);
+	printf_s("暗号鍵を入力してください.\n");
+	int passward;
+	scanf_s("%d", &passward);
+	printf_s("暗号文は,\n");
+	for (int i = 0; i < 18; i++)
+	{
+		long int encode;
+		encode = ((int)(buf[i])) * passward;
+		printf_s("No%d = %d\n", i, encode);
+	}
+	printf_s("です.\n");
+	printf_s("暗号化プログラムを終了します.\n");
+	return 0;
+}

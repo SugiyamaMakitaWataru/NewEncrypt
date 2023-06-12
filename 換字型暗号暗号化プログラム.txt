@@ -1,0 +1,216 @@
+#include <stdio.h>
+int main(void)
+{
+	printf_s("本プログラムは,数学理論上に展開した換字式暗号を提供するプログラムです.\n");
+	printf_s("プログラミングの都合により理論とは多少異なる方式になります.\n");
+	printf_s("暗号化プログラムです.\n");
+
+	printf_s("平文を入力してください.\n");
+	char buf[20];
+	for (int i = 0; i < 20; i++)
+	{
+		buf[i] = NULL;
+	}
+	scanf_s("%9s", &(buf[0]), 9);
+	printf_s("暗号鍵を入力してください.\n");
+	int passward[10];
+	for (int i = 0; i < 10; i++)
+	{
+		passward[i] = 0;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf_s("%d = ", i);
+		scanf_s("%d", &(passward[i]));
+	}
+	printf_s("暗号文は,\n");
+	for (int i = 0; i < 18; i++)
+	{
+		unsigned short int encode = buf[i];
+		unsigned short int ones = (unsigned short int)(encode % 10);
+		unsigned short int twos = (unsigned short int)(encode % 100 - ones);
+		unsigned short int threes = (unsigned short int)(encode % 1000 - twos - ones);
+		unsigned short int fours = (unsigned short int)(encode % 10000 - threes - twos - ones);
+		unsigned short int fives = (unsigned short int)(encode - fours - threes - twos - ones);
+		switch (ones)
+		{
+		case 0:
+			ones = passward[0];
+			break;
+		case 1:
+			ones = passward[1];
+			break;
+		case 2:
+			ones = passward[2];
+			break;
+		case 3:
+			ones = passward[3];
+			break;
+		case 4:
+			ones = passward[4];
+			break;
+		case 5:
+			ones = passward[5];
+			break;
+		case 6:
+			ones = passward[6];
+			break;
+		case 7:
+			ones = passward[7];
+			break;
+		case 8:
+			ones = passward[8];
+			break;
+		case 9:
+			ones = passward[9];
+			break;
+		default:
+			break;
+		}
+		switch (twos)
+		{
+		case 0:
+			twos = passward[0];
+			break;
+		case 1:
+			twos = passward[1];
+			break;
+		case 2:
+			twos = passward[2];
+			break;
+		case 3:
+			twos = passward[3];
+			break;
+		case 4:
+			twos = passward[4];
+			break;
+		case 5:
+			twos = passward[5];
+			break;
+		case 6:
+			twos = passward[6];
+			break;
+		case 7:
+			twos = passward[7];
+			break;
+		case 8:
+			twos = passward[8];
+			break;
+		case 9:
+			twos = passward[9];
+			break;
+		default:
+			break;
+		}
+		switch (threes)
+		{
+		case 0:
+			threes = passward[0];
+			break;
+		case 1:
+			threes = passward[1];
+			break;
+		case 2:
+			threes = passward[2];
+			break;
+		case 3:
+			threes = passward[3];
+			break;
+		case 4:
+			threes = passward[4];
+			break;
+		case 5:
+			threes = passward[5];
+			break;
+		case 6:
+			threes = passward[6];
+			break;
+		case 7:
+			threes = passward[7];
+			break;
+		case 8:
+			threes = passward[8];
+			break;
+		case 9:
+			threes = passward[9];
+			break;
+		default:
+			break;
+		}
+		switch (fours)
+		{
+		case 0:
+			fours = passward[0];
+			break;
+		case 1:
+			fours = passward[1];
+			break;
+		case 2:
+			fours = passward[2];
+			break;
+		case 3:
+			fours = passward[3];
+			break;
+		case 4:
+			fours = passward[4];
+			break;
+		case 5:
+			fours = passward[5];
+			break;
+		case 6:
+			fours = passward[6];
+			break;
+		case 7:
+			fours = passward[7];
+			break;
+		case 8:
+			fours = passward[8];
+			break;
+		case 9:
+			fours = passward[9];
+			break;
+		default:
+			break;
+		}
+		switch (fives)
+		{
+		case 0:
+			fives = passward[0];
+			break;
+		case 1:
+			fives = passward[1];
+			break;
+		case 2:
+			fives = passward[2];
+			break;
+		case 3:
+			fives = passward[3];
+			break;
+		case 4:
+			fives = passward[4];
+			break;
+		case 5:
+			fives = passward[5];
+			break;
+		case 6:
+			fives = passward[6];
+			break;
+		case 7:
+			fives = passward[7];
+			break;
+		case 8:
+			fives = passward[8];
+			break;
+		case 9:
+			fives = passward[9];
+			break;
+		default:
+			break;
+		}
+		unsigned long int shownum = fives * 10000 + fours * 1000 + threes * 100 + twos * 10 + ones;
+		printf_s("No%d = {%d}\n", i, shownum);
+	}
+	printf_s("です.\n");
+	printf_s("暗号化プログラムを終了します.\n");
+	return 0;
+}

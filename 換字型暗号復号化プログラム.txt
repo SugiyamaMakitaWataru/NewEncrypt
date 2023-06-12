@@ -1,0 +1,413 @@
+#include <stdio.h>
+int main(void)
+{
+	printf_s("本プログラムは,数学理論上に展開した換字式暗号を提供するプログラムです.\n");
+	printf_s("プログラミングの都合により理論とは多少異なる方式になります.\n");
+	printf_s("復号化プログラムです.\n");
+	printf_s("暗号文を入力してください.\n");
+	int buf[20];
+	for (int i = 0; i < 20; i++)
+	{
+		buf[i] = NULL;
+	}
+	for (int i = 0; i < 18; i++)
+	{
+		printf_s("No%d = ", i);
+		scanf_s("%d", &(buf[i]));
+	}
+	printf_s("復号鍵を入力してください.復号鍵は暗号鍵と同一です.\n");
+	int passward[10];
+	for (int i = 0; i < 10; i++)
+	{
+		passward[i] = 0;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf_s("%d = ", i);
+		scanf_s("%d", &(passward[i]));
+	}
+	unsigned int decode[20];
+	for (int i = 0; i < 20; i++)
+	{
+		decode[i] = 0;
+	}
+	unsigned short int showbuf[20];
+	for (int i = 0; i < 20; i++)
+	{
+		buf[i] = NULL;
+	}
+	for (int i = 0; i < 18; i++)
+	{
+		unsigned int ones = (unsigned int)(buf[i] % 10);
+		unsigned int twes = (unsigned int)(buf[i] % 100 - ones);
+		unsigned int threes = (unsigned int)(buf[i] % 1000 - ones - twes);
+		unsigned int fours = (unsigned int)(buf[i] % 10000 - ones - twes - threes);
+		unsigned int fives = (unsigned int)(buf[i] - ones - twes - threes - fours);
+		if (ones == passward[0])
+		{
+			ones = 0;
+		}
+		else if (ones == passward[1])
+		{
+			ones = 1;
+		}
+		else if (ones == passward[2])
+		{
+			ones = 2;
+		}
+		else if (ones == passward[3])
+		{
+			ones = 3;
+		}
+		else if (ones == passward[4])
+		{
+			ones = 4;
+		}
+		else if (ones == passward[5])
+		{
+			ones = 5;
+		}
+		else if (ones == passward[6])
+		{
+			ones = 6;
+		}
+		else if (ones == passward[7])
+		{
+			ones = 7;
+		}
+		else if (ones == passward[8])
+		{
+			ones = 8;
+		}
+		else if (ones == passward[9])
+		{
+			ones = 9;
+		}
+		if (twes == passward[0])
+		{
+			twes = 0;
+		}
+		else if (twes == passward[1])
+		{
+			twes = 1;
+		}
+		else if (twes == passward[2])
+		{
+			twes = 2;
+		}
+		else if (twes == passward[3])
+		{
+			twes = 3;
+		}
+		else if (twes == passward[4])
+		{
+			twes = 4;
+		}
+		else if (twes == passward[5])
+		{
+			twes = 5;
+		}
+		else if (twes == passward[6])
+		{
+			twes = 6;
+		}
+		else if (twes == passward[7])
+		{
+			twes = 7;
+		}
+		else if (twes == passward[8])
+		{
+			twes = 8;
+		}
+		else if (twes == passward[9])
+		{
+			twes = 9;
+		}
+		if (threes == passward[0])
+		{
+			threes = 0;
+		}
+		else if (threes == passward[1])
+		{
+			threes = 1;
+		}
+		else if (threes == passward[2])
+		{
+			threes = 2;
+		}
+		else if (threes == passward[3])
+		{
+			threes = 3;
+		}
+		else if (threes == passward[4])
+		{
+			threes = 4;
+		}
+		else if (threes == passward[5])
+		{
+			threes = 5;
+		}
+		else if (threes == passward[6])
+		{
+			threes = 6;
+		}
+		else if (threes == passward[7])
+		{
+			threes = 7;
+		}
+		else if (threes == passward[8])
+		{
+			threes = 8;
+		}
+		else if (threes == passward[9])
+		{
+			threes = 9;
+		}
+		if (fours == passward[0])
+		{
+			fours = 0;
+		}
+		else if (fours == passward[1])
+		{
+			fours = 1;
+		}
+		else if (fours == passward[2])
+		{
+			fours = 2;
+		}
+		else if (fours == passward[3])
+		{
+			fours = 3;
+		}
+		else if (fours == passward[4])
+		{
+			fours = 4;
+		}
+		else if (fours == passward[5])
+		{
+			fours = 5;
+		}
+		else if (fours == passward[6])
+		{
+			fours = 6;
+		}
+		else if (fours == passward[7])
+		{
+			fours = 7;
+		}
+		else if (fours == passward[8])
+		{
+			fours = 8;
+		}
+		else if (fours == passward[9])
+		{
+			fours = 9;
+		}
+		if (fives == passward[0])
+		{
+			fives = 0;
+		}
+		else if (fives == passward[1])
+		{
+			fives = 1;
+		}
+		else if (fives == passward[2])
+		{
+			fives = 2;
+		}
+		else if (fives == passward[3])
+		{
+			fives = 3;
+		}
+		else if (fives == passward[4])
+		{
+			fives = 4;
+		}
+		else if (fives == passward[5])
+		{
+			fives = 5;
+		}
+		else if (fives == passward[6])
+		{
+			fives = 6;
+		}
+		else if (fives == passward[7])
+		{
+			fives = 7;
+		}
+		else if (fives == passward[8])
+		{
+			fives = 8;
+		}
+		else if (fives == passward[9])
+		{
+			 fives = 9;
+		}
+		decode[i] = fives * 10000 + fours * 1000 + threes * 100 + twes * 10 + ones;
+		switch (ones)
+		{
+		case 0:
+			showbuf[i] = 0;
+			break;
+		case 1:
+			showbuf[i] = 1;
+			break;
+		case 2:
+			showbuf[i] = 2;
+			break;
+		case 3:
+			showbuf[i] = 3;
+			break;
+		case 4:
+			showbuf[i] = 4;
+			break;
+		case 5:
+			showbuf[i] = 5;
+			break;
+		case 6:
+			showbuf[i] = 6;
+			break;
+		case 7:
+			showbuf[i] = 7;
+			break;
+		case 8:
+			showbuf[i] = 8;
+			break;
+		case 9:
+			showbuf[i] = 9;
+			break;
+		default:
+			break;
+		}
+		switch (twes)
+		{
+		case 0:
+			showbuf[i] += 0;
+			break;
+		case 1:
+			showbuf[i] += 1 * 10;
+			break;
+		case 2:
+			showbuf[i] += 2 * 10;
+			break;
+		case 3:
+			showbuf[i] += 3 * 10;
+			break;
+		case 4:
+			showbuf[i] += 4 * 10;
+			break;
+		case 5:
+			showbuf[i] += 5 * 10;
+			break;
+		case 6:
+			showbuf[i] += 6 * 10;
+			break;
+		case 7:
+			showbuf[i] += 7 * 10;
+			break;
+		case 8:
+			showbuf[i] += 8 *10;
+			break;
+		case 9:
+			showbuf[i] += 9 *10;
+			break;
+		default:
+			break;
+		}
+		switch (threes)
+		{
+		case 0:
+			showbuf[i] += 0;
+			break;
+		case 1:
+			showbuf[i] += 1 * 100;
+			break;
+		case 2:
+			showbuf[i] += 2 * 100;
+			break;
+		case 3:
+			showbuf[i] += 3 * 100;
+			break;
+		case 4:
+			showbuf[i] += 4 * 100;
+			break;
+		case 5:
+			showbuf[i] += 5 * 100;
+			break;
+		case 6:
+			showbuf[i] += 6 * 100;
+			break;
+		case 7:
+			showbuf[i] += 7 * 100;
+			break;
+		case 8:
+			showbuf[i] += 8 * 100;
+			break;
+		case 9:
+			showbuf[i] += 9 * 100;
+			break;
+		default:
+			break;
+		}
+		switch (fours)
+		{
+		case 0:
+			showbuf[i] += 0;
+			break;
+		case 1:
+			showbuf[i] += 1 * 1000;
+			break;
+		case 2:
+			showbuf[i] += 2 * 1000;
+			break;
+		case 3:
+			showbuf[i] += 3 * 1000;
+			break;
+		case 4:
+			showbuf[i] += 4 * 1000;
+			break;
+		case 5:
+			showbuf[i] += 5 * 1000;
+			break;
+		case 6:
+			showbuf[i] += 6 * 1000;
+			break;
+		case 7:
+			showbuf[i] += 7 * 1000;
+			break;
+		case 8:
+			showbuf[i] += 8 * 1000;
+			break;
+		case 9:
+			showbuf[i] += 9 * 1000;
+			break;
+		default:
+			break;
+		}
+		switch (fives)
+		{
+		case 0:
+			showbuf[i] += 0;
+			break;
+		case 1:
+			showbuf[i] += 1 * 10000;
+			break;
+		case 2:
+			showbuf[i] += 2 * 10000;
+			break;
+		case 3:
+			showbuf[i] += 3 * 10000;
+			break;
+		default:
+			break;
+		}
+	}
+	char showcharbuf[20];
+	for (int i = 0; i < 20; i++)
+	{
+		showcharbuf[i] = showbuf[i];
+	}
+	printf_s("平文は「%s」です.\n", showcharbuf);
+	printf_s("復号化プログラムを終了します.\n");
+	return 0;
+}
